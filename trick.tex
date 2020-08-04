@@ -1,0 +1,137 @@
+\documentclass[aspectratio=43]{beamer} 
+\usetheme{uniud}
+\usepackage{graphicx}
+\usepackage{fontawesome}
+
+\usepackage{verbatim}
+
+\newcommand{\diff}[2]{\frac{\mathrm{d}\,#1}{\mathrm{d}\,#2}}
+\newcommand{\wn}{\ensuremath{\mathrm{cm}^{-1}}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+\title{Some \LaTeX \;Tricks}
+\date{\today}
+\author[Tang Rulin]{
+  Tang Rulin \\
+  \texttt{\faEnvelope\ Tang.Rulin.Phys@gmail.com}
+}
+
+\AtBeginSection[] {
+  \frame<handout:0> {
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+    }
+  }
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\section{Packages}
+\frame{
+\begin{enumerate}
+\item Manually Install
+    \begin{itemize}
+    \item Put .sty in the same directory (example: pinoutikz)
+    \item /usr/local/texlive/2019/texmf-dist/tex/latex/;\ texhash (example: pinoutikz)
+    \end{itemize}
+\item Auto Install: TeX Live Utility
+    \begin{itemize}
+    \item SJTU: http://mirrors.sjtug.sjtu.edu.cn/ctan
+    \item CTAN: https://ctan.org/tex-archive
+    \item TUNA: https://mirrors.tuna.tsinghua.edu.cn/CTAN
+    \end{itemize}
+\end{enumerate}
+}
+\section{Websites}
+\frame{
+\begin{enumerate}
+\item https://www.latexstudio.net
+\item https://www.overleaf.com
+\end{enumerate}
+}
+
+\section{Tools}
+\frame{
+\begin{enumerate}
+\item Excel $\rightarrow$ csv $\rightarrow$ LaTeX: https://www.tablesgenerator.com, https://tableconvert.com
+\item The Comprehensive LaTeX Symbol List 
+\item Short Course Symbol Tables
+\item http://detexify.kirelabs.org/classify.html
+\item https://webdemo.myscript.com
+\end{enumerate}
+}
+\section{Docs}
+\frame{
+\begin{enumerate}
+\item texdoc
+\item https://www.draw.io
+\item ChinaTEX MathFAQ
+\item Mathematical Writing 
+\end{enumerate}
+}
+
+\section{Commands}
+\begin{frame}[fragile]
+\begin{enumerate}
+\item \verb!\newcommand/\renewcommand! (example $\diff{f}{x}$)
+\item \verb!\ensuremath! (example 1 \wn, $1\;\wn$)
+\item \verb!\input (like #include in C language)!
+\end{enumerate}
+\end{frame}
+\section{Templates}
+\frame{
+\begin{enumerate}
+\item Beamer (Tsinghua Beamer Templates)
+\item ThuThesis (compatibility)
+\item REVTeX (4.1)
+\end{enumerate}
+}
+\section{Build Automation}
+\frame{
+\begin{enumerate}
+\item compile engine: \textasciitilde/Library/TeXShop/Engines/
+\item latexmk: latexmk main.tex
+\end{enumerate}
+}
+\section{Font}
+\begin{frame}[fragile]
+\begin{enumerate}
+\item Install
+\begin{itemize}
+\item Put the font file in the same directory
+\item Install as the system font
+\end{itemize}
+\item Usage
+\begin{itemize}
+\item \verb!\fontspec{JennaSue.ttf}!
+\item \verb!\newfontfamily\JS{JennaSue.ttf}!
+\item \verb!\setmainfont{JennaSue.ttf}!
+\item ...
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{Other}
+\begin{frame}[fragile]
+\begin{enumerate}
+\item \verb!\hspace & \vspace! (exapme: 1\hspace{1cm}2)
+\item \verb!\minipage! example:
+\begin{figure}
+\begin{minipage}[b]{0.3\linewidth}
+\centering
+\includegraphics[width=2cm]{pictures/redhat.jpg}
+\end{minipage}
+\begin{minipage}[b]{0.3\linewidth}
+\centering
+\includegraphics[width=2cm]{pictures/gentoo.jpg}
+\end{minipage}
+\end{figure}
+\item \verb![htbp]! \& \verb![H]!
+\item Any Questions?
+%其他功能：费曼图，花哨的图片/文本框，五线谱，化学方程式，口算题，诗歌，等
+\end{enumerate}
+\end{frame}
+
+\end{document}
+
